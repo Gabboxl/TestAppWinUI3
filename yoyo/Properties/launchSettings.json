@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "yoyo (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "yoyo (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
