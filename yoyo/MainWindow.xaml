@@ -8,31 +8,42 @@
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     mc:Ignorable="d">
 
-      <Page>
+      <Page
+          x:Name="paginaPrinc">
         <Grid>
 
-            
-            
-            <muxc:NavigationView x:Name="nvSample">
-                <muxc:NavigationView.MenuItems>
-                    <muxc:NavigationViewItem Icon="Play" Content="Menu Item1" Tag="SamplePage1" />
-                    <muxc:NavigationViewItem Icon="Save" Content="Menu Item2" Tag="SamplePage2" />
-                    <muxc:NavigationViewItem Icon="Refresh" Content="Menu Item3" Tag="SamplePage3" />
-                    <muxc:NavigationViewItem Icon="Download" Content="Menu Item4" Tag="SamplePage4" />
-                </muxc:NavigationView.MenuItems>
-                <Frame x:Name="contentFrame"/>
-            </muxc:NavigationView>
 
 
+            <NavigationView x:Name="NavView">
+                <NavigationView.MenuItems>
+                    <NavigationViewItem Tag="home" Icon="Home" Content="Home"/>
+                    <NavigationViewItemSeparator/>
+                    <NavigationViewItemHeader x:Name="MainPagesHeader"
+                                           Content="Main pages"/>
+                    <NavigationViewItem Tag="apps" Content="Apps">
+                        <NavigationViewItem.Icon>
+                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEB3C;"/>
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <NavigationViewItem Tag="games" Content="Games">
+                        <NavigationViewItem.Icon>
+                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE7FC;"/>
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <NavigationViewItem Tag="music" Icon="Audio" Content="Music"/>
+                </NavigationView.MenuItems>
 
+                <NavigationView.AutoSuggestBox>
+                    <!-- See AutoSuggestBox documentation for
+                 more info about how to implement search. -->
+                    <AutoSuggestBox x:Name="NavViewSearchBox" QueryIcon="Find"/>
+                </NavigationView.AutoSuggestBox>
 
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Button x:Name="myButton">Click Me</Button>
-
-                <ProgressRing x:Name="progresso" Visibility="Collapsed"></ProgressRing>
-                <Button Name="asd"></Button>
-
-            </StackPanel>
+                <ScrollViewer>
+                    <Frame x:Name="Frame1" Padding="12,0,12,24" IsTabStop="True"
+                   NavigationFailed="ContentFrame_NavigationFailed"/>
+                </ScrollViewer>
+            </NavigationView>
 
         </Grid>
           
