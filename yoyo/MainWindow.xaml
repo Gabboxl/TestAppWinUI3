@@ -33,14 +33,8 @@
                     <NavigationViewItem Tag="music" Icon="Audio" Content="Music"/>
                 </NavigationView.MenuItems>
 
-                <NavigationView.AutoSuggestBox>
-                    <!-- See AutoSuggestBox documentation for
-                 more info about how to implement search. -->
-                    <AutoSuggestBox x:Name="NavViewSearchBox" QueryIcon="Find"/>
-                </NavigationView.AutoSuggestBox>
-
                 <ScrollViewer>
-                    <Frame x:Name="Frame1" Padding="12,0,12,24" IsTabStop="True"
+                    <Frame x:Name="Frame1" IsTabStop="True"
                    NavigationFailed="ContentFrame_NavigationFailed"/>
                 </ScrollViewer>
             </NavigationView>

@@ -29,19 +29,10 @@ namespace yoyo
            NavView.Loaded += new RoutedEventHandler((object sender, RoutedEventArgs e) => { NavView_Loaded(sender, e); });
             NavView.ItemInvoked += new Windows.Foundation.TypedEventHandler<NavigationView, NavigationViewItemInvokedEventArgs>((NavigationView sender, NavigationViewItemInvokedEventArgs args) => { NavView_ItemInvoked(sender, args); });
             NavView.BackRequested += new Windows.Foundation.TypedEventHandler<NavigationView, NavigationViewBackRequestedEventArgs>((NavigationView sender, NavigationViewBackRequestedEventArgs args) => { NavView_BackRequested(sender, args); });
-
-
         }
 
 
 
-
-
-
-        // Add "using" for WinUI controls.
-        // using muxc = Microsoft.UI.Xaml.Controls;
-
-        private double NavViewCompactModeThresholdWidth { get { return NavView.CompactModeThresholdWidth; } }
 
         private void ContentFrame_NavigationFailed(object sender, NavigationFailedEventArgs e)
         {
@@ -59,15 +50,6 @@ namespace yoyo
 
         private void NavView_Loaded(object sender, RoutedEventArgs e)
         {
-            // You can also add items in code.
-            NavView.MenuItems.Add(new NavigationViewItemSeparator());
-            NavView.MenuItems.Add(new NavigationViewItem
-            {
-                Content = "My content",
-                Icon = new SymbolIcon((Symbol)0xF1AD),
-                Tag = "content"
-            });
-            _pages.Add(("content", typeof(MainWindow)));
 
             // Add handler for ContentFrame navigation.
             Frame1.Navigated += On_Navigated;
@@ -94,22 +76,6 @@ namespace yoyo
             }
         }
 
-        // NavView_SelectionChanged is not used in this example, but is shown for completeness.
-        // You will typically handle either ItemInvoked or SelectionChanged to perform navigation,
-        // but not both.
-        private void NavView_SelectionChanged(NavigationView sender,
-                                              NavigationViewSelectionChangedEventArgs args)
-        {
-            if (args.IsSettingsSelected == true)
-            {
-                NavView_Navigate("settings", args.RecommendedNavigationTransitionInfo);
-            }
-            else if (args.SelectedItemContainer != null)
-            {
-                var navItemTag = args.SelectedItemContainer.Tag.ToString();
-                NavView_Navigate(navItemTag, args.RecommendedNavigationTransitionInfo);
-            }
-        }
 
         private void NavView_Navigate(
             string navItemTag,

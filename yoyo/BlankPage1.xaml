@@ -10,11 +10,19 @@
 
     <Grid>
 
+        
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button x:Name="myButton">Click Me</Button>
 
+
+            <InfoBar x:Name="NoInternetNotification"
+    Severity="Error"
+    Title="No Internet"
+    Message="Reconnect to continue working."
+    IsClosable="True" 
+                     IsOpen="True"/>
+
             <ProgressRing x:Name="progresso" Visibility="Collapsed"></ProgressRing>
-            <Button Name="asd"></Button>
 
         </StackPanel>
 
