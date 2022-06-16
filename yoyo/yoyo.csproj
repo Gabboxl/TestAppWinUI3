@@ -10,6 +10,9 @@
     <PublishProfile>win10-$(Platform).pubxml</PublishProfile>
     <UseWinUI>true</UseWinUI>
     <EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+    <StartupObject>yoyo.Program</StartupObject>
+    <Authors>$(Authors)</Authors>
+    <Copyright>lelu 2022</Copyright>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="BlankPage1.xaml" />
