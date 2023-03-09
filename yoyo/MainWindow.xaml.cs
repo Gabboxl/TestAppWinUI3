@@ -12,7 +12,7 @@ using Windows.UI.Core;
 
 namespace yoyo
 {
-   
+
     /// <summary>
     /// An empty window that can be used on its own or navigated to within a Frame.
     /// </summary>
@@ -23,10 +23,12 @@ namespace yoyo
             this.InitializeComponent();
 
 
+            this.ExtendsContentIntoTitleBar = true;
+
+            //this.SetTitleBar(AppTitleBar);
 
 
-
-           NavView.Loaded += new RoutedEventHandler((object sender, RoutedEventArgs e) => { NavView_Loaded(sender, e); });
+            NavView.Loaded += new RoutedEventHandler((object sender, RoutedEventArgs e) => { NavView_Loaded(sender, e); });
             NavView.ItemInvoked += new Windows.Foundation.TypedEventHandler<NavigationView, NavigationViewItemInvokedEventArgs>((NavigationView sender, NavigationViewItemInvokedEventArgs args) => { NavView_ItemInvoked(sender, args); });
             NavView.BackRequested += new Windows.Foundation.TypedEventHandler<NavigationView, NavigationViewBackRequestedEventArgs>((NavigationView sender, NavigationViewBackRequestedEventArgs args) => { NavView_BackRequested(sender, args); });
         }
